@@ -7,6 +7,7 @@
         public float headsetYOffset = 0.2f;
         public bool ignoreGrabbedCollisions = true;
         public bool resetPositionOnCollision = true;
+        public float rigidbodyMass = 100f;
 
         private Transform headset;
         private Rigidbody rb;
@@ -77,7 +78,7 @@
         private void CreateCollider()
         {
             rb = gameObject.AddComponent<Rigidbody>();
-            rb.mass = 100;
+            rb.mass = rigidbodyMass;
             rb.freezeRotation = true;
 
             bc = gameObject.AddComponent<BoxCollider>();
